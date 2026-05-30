@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&family=Montserrat:wght@400;700&display=swap');
+
+@font-face {
+    font-family: '2045alphabet';
+    src: url('https://ec2045.github.io/2045font/2045alphabet.otf') format('opentype');
+    font-display: swap;
+}
+
+body {
+    font-family: '2045alphabet', 'Noto Sans JP', sans-serif;
+    scroll-behavior: smooth;
+}
+
+.hero-pattern {
+    background-color: #0f172a;
+    background-image: radial-gradient(#1e293b 1px, transparent 1px);
+    background-size: 40px 40px;
+}
+
+.glass {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Tab Content Control */
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+    animation: fadeIn 0.4s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Tab Button Styling */
+.tab-btn {
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.tab-btn.active {
+    color: #6366f1;
+}
+
+.tab-btn.active::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #6366f1;
+}
+
+/* 互換性のための標準プロパティ追加例（もし今後テキストグラデーション等を使う場合） */
+.text-gradient {
+    background: linear-gradient(to right, #6366f1, #a855f7);
+    -webkit-background-clip: text;
+    background-clip: text;
+    /* 標準プロパティを追加 */
+    -webkit-text-fill-color: transparent;
+}
